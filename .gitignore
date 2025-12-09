@@ -1,0 +1,23 @@
+# System & Environment
+.DS_Store
+.env
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints
+julia_env/
+logs/
+
+# Project specific ignores
+tree.md
+notes.md
+main.py
+app.py
+outputs/
+visualizer/
+examples/
+glassbox/outputs/
+
+# Ignore all notebooks except the demo
+*.ipynb
+!01_maths_demo.ipynb

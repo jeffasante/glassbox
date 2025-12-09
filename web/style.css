@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Geist Mono', monospace;
+    background: #ffffff;
+    color: #666666;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+header p {
+    font-size: 14px;
+    color: #999999;
+    font-weight: 400;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.panel {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+h2 {
+    color: #000000;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+h3 {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 400;
+    color: #666666;
+    font-size: 13px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.section {
+    margin-bottom: 16px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.radio-group label {
+    font-size: 13px;
+    color: #000000;
+    cursor: pointer;
+    transition: color 0.2s;
+    font-weight: 400;
+}
+
+.radio-group label:hover {
+    color: #333333;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 6px;
+}
+
+select, input[type="file"], textarea, input[type="text"] {
+    width: 100%;
+    padding: 8px 12px;
+    margin-top: 6px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #000000;
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+select:focus, select:hover {
+    border-color: #000000;
+}
+
+input[type="file"] {
+    color: #666666;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    color: #666666;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 2px;
+    background: #e5e5e5;
+    outline: none;
+    border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #000000;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #000000;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
+
+button {
+    width: 100%;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 16px;
+}
+
+button:hover {
+    background: #333333;
+}
+
+button:active {
+    background: #000000;
+}
+
+button:disabled {
+    background: #e5e5e5;
+    color: #999999;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+.info-text {
+    font-size: 13px;
+    color: #666666;
+    background: #f8f8f8;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #e5e5e5;
+}
+
+.code-block {
+    background: #f8f8f8;
+    padding: 16px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    overflow-x: auto;
+    margin-top: 12px;
+    border-radius: 6px;
+    border: 1px solid #e5e5e5;
+    color: #000000;
+    font-weight: 400;
+}
+
+.status {
+    margin-top: 12px;
+    font-size: 13px;
+    text-align: center;
+    color: #666666;
+}
+
+.success {
+    background: #f0f9f0;
+    color: #2d5a2d;
+    border: 1px solid #d4edda;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+#loader {
+    text-align: center;
+    margin: 30px 0;
+    color: #999999;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.result-area {
+    min-height: 250px;
+}
+
+#results h3 {
+    margin-bottom: 12px;
+    margin-top: 20px;
+}
+
+#complexity-val {
+    color: #000000;
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 16px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    header p {
+        font-size: 13px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    h2 {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
+    h3 {
+        font-size: 12px;
+        margin-top: 12px;
+    }
+
+    .radio-group {
+        gap: 6px;
+    }
+
+    select, input[type="file"] {
+        font-size: 12px;
+    }
+
+    button {
+        padding: 9px 14px;
+        font-size: 12px;
+    }
+
+    .code-block {
+        font-size: 12px;
+        padding: 12px;
+    }
+}

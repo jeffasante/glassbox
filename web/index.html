@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlassBox - Neural Network Reverse Engineering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 GlassBox</h1>
+            <p>Reverse engineer artificial neural networks into interpretable formulas</p>
+        </header>
+
+        <main>
+            <div class="panel left-panel">
+                <h2>Load Model [The Black Box]</h2>
+                
+                <div class="section">
+                    <h3>Source</h3>
+                    <div class="radio-group">
+                        <label><input type="radio" name="source" value="demo" checked> Use Demo Model</label>
+                        <label><input type="radio" name="source" value="upload"> Upload .pth File</label>
+                        <label><input type="radio" name="source" value="custom"> Paste Code & Upload</label>
+                    </div>
+                </div>
+
+                <div id="demo-options" class="section">
+                    <h3>Choose Demo</h3>
+                    <select id="demo-select">
+                        <option value="physics">Physics (F=ma)</option>
+                        <option value="logic">Credit Logic</option>
+                    </select>
+                    <p id="demo-info" class="info-text">Hidden Law: y = 2.5 * x^2 + cos(x)</p>
+                </div>
+
+                <div id="upload-options" class="section hidden">
+                    <h3>Upload Model</h3>
+                    <select id="arch-select">
+                        <option value="kinetic">Kinetic Energy Net (1 -> 64 -> 64 -> 1)</option>
+                    </select>
+                    <input type="file" id="model-upload" accept=".pth">
+                </div>
+
+                <div id="custom-options" class="section hidden">
+                    <h3>Define Architecture</h3>
+                    <textarea id="custom-code" rows="10" placeholder="Paste your class definition here...
+Example:
+class MyNet(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.net = nn.Linear(1, 1)
+    def forward(self, x):
+        return self.net(x)"></textarea>
+                    <input type="text" id="custom-class-name" placeholder="Class Name (e.g. MyNet)">
+                    <h3>Upload Weights</h3>
+                    <input type="file" id="custom-upload" accept=".pth">
+                </div>
+
+                <div class="section">
+                    <h3>Configuration</h3>
+                    <label>Extraction Mode:</label>
+                    <select id="mode-select">
+                        <option value="math">Math (Physics)</option>
+                        <option value="logic">Logic (Business)</option>
+                    </select>
+                    
+                    <label>Complexity Penalty: <span id="complexity-val">0.02</span></label>
+                    <input type="range" id="complexity-slider" min="0.001" max="0.1" step="0.001" value="0.02">
+                </div>
+
+                <button id="load-btn">Load Model</button>
+                <p id="load-status" class="status"></p>
+            </div>
+
+            <div class="panel right-panel">
+                <h2>Extract Formula</h2>
+                <div class="result-area">
+                    <button id="extract-btn" disabled>Reverse Engineer Model</button>
+                    <div id="loader" class="hidden">GlassBox is interrogating the model...</div>
+                    
+                    <div id="results" class="hidden">
+                        <h3>Extracted Result:</h3>
+                        <div id="equation-display" class="code-block"></div>
+                        <p id="success-msg" class="success hidden"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

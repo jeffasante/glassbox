@@ -64,6 +64,8 @@ GlassBox uses a "Teacher-Student" knowledge distillation approach:
 
 ## Example Result & "The Bad News"
 
+![Reversed Demo Result](assets/reversed-demo.png)
+
 While GlassBox can find hidden laws, it sometimes suffers from "Bloat".
 
 *   **The Truth:** $2.5x^2 + \cos(x)$
